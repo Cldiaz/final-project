@@ -1,0 +1,119 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/navbar.ejs %>
+<main class="container">
+    <div class="white-bg">
+    <img  class="center-block" src="/Assets/logo1.png">
+    <h1>Dashboard <%= typeU%></h1>
+    <div class="row">
+    <div class="col-sm-4">
+        <div class = "panel panel-primary">
+            <div class = "panel-heading">
+                <i class="fa fa-ticket fa-5x"></i>
+                <h3 class = "panel-title text-right"><%= tickets.length %> Incidents Reported</h3>
+            </div>
+            <div class = "panel-body">
+            Total of incidents reported
+            </div>
+        </div>
+    </div>     
+    <div class="col-sm-4">
+        <div class = "panel panel-green">
+            <div class = "panel-heading">
+                <i class="fa fa-spinner fa-5x"></i>
+                <h3 class = "panel-title text-right">
+                    <% var number = 0; 
+                    for (var i = 0; i < tickets.length; i++) { 
+                            if(tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus  == 'IN PROGRESS')
+                            {number++;}
+                    }%> 
+                    <%= number %> In progress</h3>
+            </div>
+            <div class = "panel-body">
+            Total of open incidents
+            </div>
+        </div>
+    </div>  
+
+    <div class="col-sm-4">
+        <div class = "panel panel-red">
+            <div class = "panel-heading">
+                <i class="fa fa-check-square fa-5x"></i>
+                <h3 class = "panel-title text-right">
+                    <% var number = 0; 
+                    for (var i = 0; i < tickets.length; i++) { 
+                            if(tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus  == 'CLOSED')
+                            {number++;}
+                    }%> 
+                    <%= number %> Incidents Closed</h3>
+            </div>
+            <div class = "panel-body">
+            Total of closed incidents
+            </div>
+        </div>
+    </div>  
+    </div>
+    
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Ticket Number</th>
+                    <th>Date Submitted</th>
+                    <th>Level of Priority</th>
+                    <th>Ticket Title</th>
+                    <th>Customer Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (var i = 0; i < tickets.length; i++) { %>
+                    <tr>
+                        <td><a href="/tickets/<%= tickets[i]._id %>"><%= tickets[i].ticketNumber %></a></td>
+                        <td><%= tickets[i].createdOn.toDateString() %></td>
+                        <td><%= tickets[i].ticketPriority %></td>
+                        <td><%= tickets[i].ticketTitle %></td>
+                        <td><%= tickets[i].customerName %></td>
+                        <td><% if (tickets[i].incidentNarrative !== undefined){ %> <%= tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus %> <%}%></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    
+    
+    <a href="/tickets/add">Add a New Ticket</a>
+
+    <ul class="list-group">
+        <% for (var i = 0; i < tickets.length; i++) { %>
+            <li class="list-group-item">
+                Ticket Title: 
+                <a href="/tickets/<%= tickets[i]._id %>" title="Edit Ticket">
+                    <%= tickets[i].ticketTitle %>
+                </a>
+                <br />
+                Description: <%= tickets[i].ticketDescription %>
+                <br />
+                Priority: <%= tickets[i].ticketPriority %>
+                <br />
+                
+                <br />
+                Customer Name: <%= tickets[i].customerName %>
+                <br />
+                Customer Phone: <%= tickets[i].customerPhone %>
+                <br />
+                Incident Narrative :
+                <br />
+                <% if (tickets[i].incidentNarrative !== undefined) 
+                   {
+                        for (var c = 0; c < tickets[i].incidentNarrative.length; c++ ){%>
+                        Comment: <%= tickets[i].incidentNarrative[c].comment %> || Date: <%= tickets[i].incidentNarrative[c].commentDate.toDateString() %>
+                        <br>
+                       <%}
+                   }
+                %>
+                <br />
+                Ticket Number: <%= tickets[i].ticketNumber %>
+            </li>
+        <% } %>
+    </ul>
+   </div> <!--./white-bg-->
+</main>
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,29 @@
+/* custom style sheet */
+body{
+    background-image: url("../Assets/sprinkles.png");
+    background-repeat: repeat;
+    
+}
+.panel-green {
+    border-color: #5cb85c;
+}
+
+.panel-green .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-red {
+    border-color: #d9534f;
+}
+
+.panel-red .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+.white-bg{
+    background-color: white;
+    padding: 2em;
+}
