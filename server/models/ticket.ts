@@ -6,6 +6,12 @@ var ticketSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    createdBy:{
+        type: String,
+        default: '',
+        trim: true,
+        required: 'Created by is required'     
+    },
     ticketNumber: {
         type: String,
         default: Date.now  
@@ -16,16 +22,30 @@ var ticketSchema = new mongoose.Schema({
         trim: true,
         required: 'Ticket Title is required'
     },
-    ticketDescription : {
+    ticketDescription: {
         type : String,
         default: '',
         trim: true,
         required: 'Ticket Description is required'
     },
-    ticketPriority : {
+    ticketUrgency:{
         type: String,
         enum : ['HIGH', 'MEDIUM', 'LOW'],
         default : 'LOW',
+        trim: true,
+        required: 'Ticket Urgency is required'
+    },
+    ticketImpact : {
+        type: String,
+        enum : ['HIGH', 'MEDIUM', 'LOW'],
+        default : 'LOW',
+        trim: true,
+        required: 'Ticket Impact is required'
+    },
+    ticketPriority: {
+        type: Number,
+        enum : [1, 2, 3, 4, 5],
+        default : 5,
         trim: true,
         required: 'Ticket Priority is required'
     },
@@ -49,8 +69,8 @@ var ticketSchema = new mongoose.Schema({
         comment: String,
         ticketStatus : {
             type: String,
-            enum : ['NEW', 'IN PROGRESS', 'CLOSED'],
-            default : 'NEW',
+            enum : ['New', 'Picked Up', 'Assigned', 'Resolved', 'Closed'],
+            default : 'New',
             trim: true,
             required: 'Ticket Status is required'
         }

@@ -1,46 +1,59 @@
 <% include ../partials/header.ejs %>
 <% include ../partials/navbar.ejs %>
-<main class="container">
-    <h1>Add a Ticket</h1>
+<main class="container white-bg">
+    <h1 class="text-center">Submit New Support Ticket</h1>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form method="post">
+                <fieldset class="form-group">
+                    <label for="ticketTitle" >Ticket Title: *</label>
+                    <input type="text" class="form-control" name="ticketTitle" required />
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="ticketDescription">Ticket Description: *</label>
+                    <textarea class="form-control" name="ticketDescription" rows="5" required></textarea />
+                </fieldset>
 
-    <form method="post">
-        <fieldset class="form-group">
-            <label for="ticketTitle" class="col-sm-2">Ticket Title: *</label>
-            <input type="text" name="ticketTitle" required />
-        </fieldset>
-        <fieldset class="form-group">
-            <label for="ticketDescription" class="col-sm-2">Ticket Description: *</label>
-            <textarea name="ticketDescription" rows="5" required></textarea />
-        </fieldset>
 
-
-        <fieldset class="form-group">
-            <label for="ticketPriority" class="col-sm-2">Ticket Priority: *</label>
-            <select  name="ticketPriority" id="sel1">
-                <option>LOW</option>
-                <option>MEDIUM</option>
-                <option>HIGH</option>
-            </select>
-        </fieldset>
-        
-        <fieldset class="form-group">
-            <label for="customerName" class="col-sm-2">Customer Name: *</label>
-            <input type="text" name="customerName" required />
-        </fieldset>
-        
-        <fieldset class="form-group">
-            <label for="customerPhone" class="col-sm-2">Customer Phone: *</label>
-            <input type="text" name="customerPhone" required />
-        </fieldset>
-        
-        <fieldset class="form-group text-right">
-            <button type="submit" class="col-sm-offset-2 btn btn-success">Submit</button>
-            <a href="/">
-                <input type="button" class="btn btn-warning" value="Cancel"/>
-            </a>
-            <input type="reset" class="btn btn-warning" value="Restet"/>
-        </fieldset>
-    </form>
+                <fieldset class="form-group">
+                    <label for="ticketUrgency">Ticket Urgency: *</label>
+                    <select  class="form-control"  name="ticketUrgency" id="sel1">
+                        <option>LOW</option>
+                        <option>MEDIUM</option>
+                        <option>HIGH</option>
+                    </select>
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="ticketImpact">Ticket Impact: *</label>
+                    <select  class="form-control"  name="ticketImpact" id="sel1">
+                        <option>LOW</option>
+                        <option>MEDIUM</option>
+                        <option>HIGH</option>
+                    </select>
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="customerName">Customer Name: *</label>
+                    <input  class="form-control"  type="text" name="customerName" required />
+                </fieldset>
+                
+                <fieldset class="form-group">
+                    <label for="customerPhone">Customer Phone: *</label>
+                    <input  class="form-control"  type="text" name="customerPhone" required />
+                </fieldset>
+                
+                <fieldset class="form-group text-right">
+                    <button type="submit" class="col-sm-offset-2 btn btn-success">Submit</button>                    
+                    <input type="reset" class="btn btn-warning" value="Restet"/>
+                    <a href="/">
+                        <input type="button" class="btn btn-danger" value="Cancel"/>
+                    </a>
+                </fieldset>
+            </form>
+        </div>
+    </div>
 
 </main>
 <% include ../partials/footer.ejs %>

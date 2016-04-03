@@ -3,61 +3,8 @@
 <main class="container">
     <div class="white-bg">
     <img  class="center-block" src="/Assets/logo1.png">
-    <h1>Dashboard <%= typeU%></h1>
-    <div class="row">
-    <div class="col-sm-4">
-        <div class = "panel panel-primary">
-            <div class = "panel-heading">
-                <i class="fa fa-envelope fa-5x"></i>
-                <h3 class = "panel-title text-right">
-                    <% var number = 0; 
-                    for (var i = 0; i < tickets.length; i++) { 
-                            if(tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus  == 'New')
-                            {number++;}
-                    }%> 
-                    <%= number %> New Incidents</h3>
-            </div>
-            <div class = "panel-body">
-            Total of new incidents reported
-            </div>
-        </div>
-    </div>     
-    <div class="col-sm-4">
-        <div class = "panel panel-green">
-            <div class = "panel-heading">
-                <i class="fa fa-spinner fa-5x"></i>
-                <h3 class = "panel-title text-right">
-                    <% var number = 0; 
-                    for (var i = 0; i < tickets.length; i++) { 
-                            if(tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus  != 'New' && tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus  != 'Closed' )
-                            {number++;}
-                    }%> 
-                    <%= number %> In Progress Incidents</h3>
-            </div>
-            <div class = "panel-body">
-            Total of incidents assigned
-            </div>
-        </div>
-    </div> 
-    <div class="col-sm-4">
-        <div class = "panel panel-red">
-            <div class = "panel-heading">
-                <i class="fa fa-check-square fa-5x"></i>
-                <h3 class = "panel-title text-right">
-                    <% var number = 0; 
-                    for (var i = 0; i < tickets.length; i++) { 
-                            if(tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus  == 'Closed')
-                            {number++;}
-                    }%> 
-                    <%= number %> Incidents Incidents</h3>
-            </div>
-            <div class = "panel-body">
-            Total of closed incidents
-            </div>
-        </div>
-    </div>  
-    </div>
-    
+    <h1> <%= title%></h1>
+        <a href="/tickets/add">Add a new ticket</a>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -82,10 +29,7 @@
                 <% } %>
             </tbody>
         </table>
-    
-    
-    <a href="/tickets/add">Add a New Ticket</a>
-
+        
     <ul class="list-group">
         <% for (var i = 0; i < tickets.length; i++) { %>
             <li class="list-group-item">
