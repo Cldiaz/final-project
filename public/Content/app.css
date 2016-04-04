@@ -27,3 +27,11 @@ body{
     background-color: white;
     padding: 2em;
 }
+
+/* Landing Page */
+.text-vertical-center {
+    margin-top: 50px;
+    /*margin: 150px 0;*/
+    text-align: center;
+    vertical-align: middle;
+}

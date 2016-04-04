@@ -1,45 +1,51 @@
-<% include partials/header.ejs %>	
-<% include partials/navbar.ejs %>	
-	<!-- Render the Registration form  -->
-	<main class="container">
-	<!-- Display flash messages  -->
-	<% if (messages.length > 0) { %>
-        <div class="alert alert-danger"><%= messages %></div>
-      <% } %>
-		<h1>User Registration</h1>
-		<div class="col-sm-4">
-			<form method="post">
-				<fieldset class="form-group">
-					<label for="email">Email: *</label>
-					<input name="email" type="email" class="form-control" required autofocus />
-				</fieldset>
-				<fieldset class="form-group">
-					<label for="username">Username: *</label>
-					<input name="username" type="text" class="form-control" required />
-				</fieldset>
-				<fieldset class="form-group">
-					<label for="password">Password: *</label>
-					<input name="password" type="password" class="form-control" required />
-				</fieldset>
-				<fieldset class="form-group">
-					<label for="displayName">Display Name: *</label>
-					<input name="displayName" type="text" class="form-control" required />
-				</fieldset>
-                <fieldset class="form-group">
-                    <label for="type">Type: *</label>
-                    <select class="form-control"  name="type" id="sel1">
-                        <option>Admin</option>
-                        <option>Customer</option>
-                    </select>
-                </fieldset>
-        
-				<fieldset class="form-group text-right">
-					<input type="submit" class="btn btn-success" value="Submit"/>
-                    <a href="/">
-                        <input type="button" class="btn btn-warning" value="Cancel"/>
-                    </a>
-				</fieldset>
-			</form>
-		</div>
-	</main>
-<% include partials/footer.ejs %>
+<% include partials/header.ejs %>
+    <% include partials/navbar.ejs %>
+        <!-- Render the Registration form  -->
+        <main class="main">
+            <!-- Display flash messages  -->
+            <% if (messages.length > 0) { %>
+                <div class="alert alert-danger">
+                    <%= messages %>
+                </div>
+            <% } %>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-4 text-vertical-center">
+                        <img src="../Assets/logo1.png" alt="Manage Support Logo" />
+                        <h2>Registration</h2>
+                        <form method="post">
+                            <div class="form-group input-group input-group-sm">
+                                <!-- <label for="email">Email: *</label> -->
+                                <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
+                                <input name="email" type="email" class="form-control" required autofocus placeholder="Email" />
+                            </div>
+                            <div class="form-group input-group input-group-sm">
+                                <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                <input name="username" type="text" class="form-control" required placeholder="Username"/>
+                            </div>
+                            <div class="form-group input-group input-group-sm">
+                                <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key"></i></span>
+                                <input name="password" type="password" class="form-control" required placeholder="Password"/>
+                            </div>
+                            <div class="form-group input-group input-group-sm">
+                                <span class="input-group-addon" id="basic-addon1"><i class="fa fa-hashtag"></i></span>
+                                <input name="displayName" type="text" class="form-control" required placeholder="Display Name"/>
+                            </div>
+                            <div class="form-group input-group input-group-sm">
+                                <label for="type">User Type: </label>
+                                <input type="radio" name="type" value="customer" checked> Customer
+                                <input type="radio" name="type" value="Admin"> Admin
+                            </div>
+
+                            <div class="form-group text-right">
+                                <input type="submit" class="btn btn-success" value="Register" />
+                                <a href="/">
+                                    <input type="button" class="btn btn-warning" value="Cancel" />
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <% include partials/footer.ejs %>

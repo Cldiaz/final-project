@@ -1,28 +1,36 @@
 <% include partials/header.ejs %>
-<% include partials/navbar.ejs %>
-     <main class="container">
-     <% if (messages.length > 0) { %>
-        <div class="alert alert-danger"><%= messages %></div>
-      <% } %>
-      <h1>Please Login</h1>
-      <div class="col-sm-4">
-           <form method="post">
-                <fieldset class="form-group">
-                    <label>Username:</label>
-                    <input type="text" class="form-control" name="username" required autofocus/>
-                 </fieldset>
-                 <fieldset class="form-group">
-                    <label>Password:</label>
-                    <input type="password" class="form-control" name="password" required/>
-                    or <a href="/register">Register</a>
-                </fieldset>
-                <fieldset class="form-group text-right">
-                    <input type="submit" class="btn btn-success" value="Log In"/>
-                    <a href="/">
-                        <input type="button" class="btn btn-warning" value="Cancel"/>
-                    </a>
-               </fieldset>
-            </form>
+<!-- landing page doesn't have navbar. lower the margin top to fit in the page nicely-->
+<style>
+    main {
+        margin-top: 50px;
+    }
+</style>
+     <main class="main">
+         <% if (messages.length > 0) { %>
+             <div class="alert alert-danger"><%= messages %></div>
+         <% } %>
+         <div class="container">
+             <div class="row">
+                <div class="col-sm-4 col-sm-offset-4 text-vertical-center">
+                    <!-- <h1>Log In</h1> -->
+                    <img src="../Assets/logo1.png" alt="Manage Support Logo"/>
+                    <h5>Please Login to submit a ticket.</h5>
+                    <form method="post">
+                        <div class="form-group input-group input-group-md">
+                            <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-user"></i></span>
+                            <input type="text" class="form-control" name="username" required autofocus placeholder="Username"/>
+                        </div>
+                        <div class="form-group input-group input-group-md">
+                            <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-key"></i></span>
+                            <input type="password" class="form-control" name="password" required placeholder="Password"/>
+                        </div>
+                            <input type="submit" class="btn btn-success" value="Log In"/>
+                            <a href="/register">
+                                <input type="button" class="btn btn-warning" value="Register"/>
+                            </a>
+                    </form>
+                </div>
+             </div>
          </div>
     </main>
 <% include partials/footer.ejs %>
