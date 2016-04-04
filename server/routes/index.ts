@@ -24,6 +24,22 @@ router.get('/', (req: express.Request, res: express.Response, next: any) => {
 });
 
 /* Process login request */
+/*
+router.post('/', passport.authenticate('local', function(req: express.Request, res: express.Response, next: any) {
+    if(req.user.type === 'Customer'){
+        next.successRedirect = '/mytickets';
+        //res.redirect('/mytickets');
+    }
+    else if(req.user.type === 'Admin'){
+        next.successRedirect = '/users';
+        //res.redirect('/users');
+    }
+    else{
+        next.failureRedirect= '/login';
+        next.failureFlash = true;
+    }
+}));
+*/
 router.post('/', passport.authenticate('local', {
     successRedirect: '/users',
     failureRedirect: '/login',
