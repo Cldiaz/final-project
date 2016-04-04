@@ -14,16 +14,15 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">    
       <ul class="nav navbar-nav navbar-right">
         <% if(title === "Login") { %>  
-            <li class="active"><a href="/">Login</a></li>
             <li><a href="/register">Register</a></li>            
             <li><a href="/contact">Contact Us</a></li>
-        <% } else if(title == "Users") { %>
+        <% } else if(title === "Users") { %>
             <% if(displayName){ %>
                 <li class="active"><a href="/users">Users</a></li>
                 <li><a href="/tickets">Tickets</a></li>
             <% } %>
                 <li><a href="/contact">Contact Us</a></li>
-        <% } else if(title == "Tickets") { %>
+        <% } else if(title === "Tickets") { %>
             <% if(displayName){ %>
                 <li><a href="/users">Users</a></li>
                 <li class="active"><a href="/tickets">Tickets</a></li>

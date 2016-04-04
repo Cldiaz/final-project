@@ -1,10 +1,5 @@
 <% include partials/header.ejs %>
-<!-- landing page doesn't have navbar. lower the margin top to fit in the page nicely-->
-<style>
-    main {
-        margin-top: 50px;
-    }
-</style>
+<% include partials/navbar.ejs %>
      <main class="main">
          <% if (messages.length > 0) { %>
              <div class="alert alert-danger"><%= messages %></div>
