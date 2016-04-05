@@ -5,12 +5,31 @@
              <div class="alert alert-danger"><%= messages %></div>
          <% } %>
          <div class="container">
-             <div class="row">
-                <div class="col-sm-4 col-sm-offset-4 text-vertical-center">
-                    <!-- <h1>Log In</h1> -->
-                    <img src="../Assets/logo1.png" alt="Manage Support Logo"/>
+             <div class="wrapper">
+                 <form method="post" class="form-signin">
+                     <div class="row text-center bol"><i class="fa fa-circle"></i></div>
+                        <h3 class="form-signin-heading text-center">
+                            <img src="../Assets/logo1.png" alt="Manage Support Logo" width="200px"/>
+                        </h3>
+                        <!--<hr class="spartan">-->
+                            <div class="input-group">
+                                <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control" name="username" placeholder="Username" required autofocus />
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-lock"></i></span>
+                                <input type="password" class="form-control" name="password" placeholder="Password" required/>         	  
+                            </div>
+                            <p>Not Registered? <a href="/register">Register here</a></p>
+                            <div class="form-group col-sm-3" >
+                                <button class="btn btn-lg btn-block"  name="Submit" type="submit">Login</button>
+                            </div>
+                    </form>
+             
+             
+             <!--
                     <h5>Please Login to submit a ticket.</h5>
-                    <form method="post">
+                    
                         <div class="form-group input-group input-group-md">
                             <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-user"></i></span>
                             <input type="text" class="form-control" name="username" required autofocus placeholder="Username"/>
@@ -22,9 +41,11 @@
                             <input type="submit" class="btn btn-success" value="Log In"/>
                             <a href="/register">
                                 <input type="button" class="btn btn-warning" value="Register"/>
-                            </a>
-                    </form>
-                </div>
+                            </a> 
+             <div class="row">
+                <div class="col-sm-4 col-sm-offset-4 text-vertical-center">
+                    
+                </div>-->
              </div>
          </div>
     </main>

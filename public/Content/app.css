@@ -29,9 +29,45 @@ body{
 }
 
 /* Landing Page */
-.text-vertical-center {
+.wrapper{
+    margin-top: 45px;
+}
+.form-signin{
+  max-width: 420px;
+  padding: 30px 38px 38px;
+  margin: 0 auto;
+  border: 1px solid #cccccc;
+}
+.input-group{
+    height: 45px;
+    margin-bottom: 15px;
+    border-radius: 0px;
+    color: #60B99A;
+}
+.form-control{
+    height: 45px;
+    color: #60B99A;
+}
+.input-group:hover span i{
+    color: #60B99A;
+}
+.btn-block{
+    border-radius: 0px;
+    margin-top: 25px;
+    background-color: #60B99A;
+    border: none;
+}
+.btn-block:hover{
+    background-color: #D3CE3D;
+}
+.bol{
+    position: relative;
+    margin-top: -40px;
+    color: #60B99A;
+}
+/*.text-vertical-center {
     margin-top: 50px;
-    /*margin: 150px 0;*/
     text-align: center;
     vertical-align: middle;
-}
+}*/
+
