@@ -28,6 +28,14 @@ body{
     padding: 2em;
 }
 
+.btn{
+    color: white;
+}
+
+.red-required{
+    color: #E60F0F;
+}
+
 /* Landing Page */
 .wrapper{
     margin-top: 45px;
@@ -57,7 +65,7 @@ body{
     background-color: #60B99A;
     border: none;
 }
-.btn-block:hover{
+.btn-block:hover, .btn-submit:hover, .btn-cancel:hover{
     background-color: #D3CE3D;
 }
 .bol{
@@ -65,9 +73,14 @@ body{
     margin-top: -40px;
     color: #60B99A;
 }
-/*.text-vertical-center {
-    margin-top: 50px;
-    text-align: center;
-    vertical-align: middle;
-}*/
 
+/* Register */
+.userTypeLabel {
+    padding-right: 10px;
+}
+.btn-submit {
+    background-color: #60B99A;
+}
+.btn-cancel {
+    background-color: indianred;
+}
