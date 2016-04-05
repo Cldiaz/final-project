@@ -10,7 +10,7 @@
             <% } %>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4 col-sm-offset-4 text-vertical-center">
+                    <div class="col-md-4 col-md-offset-4">
                         <!--<img src="../Assets/logo1.png" alt="Manage Support Logo" width="200px"/>-->
                         <h2 class="text-center">Registration</h2><br/>
                         <p class="red-required">Every field is required *</p>
@@ -31,14 +31,14 @@
                                 <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-hashtag"></i></span>
                                 <input name="displayName" type="text" class="form-control" required placeholder="Display Name"/>
                             </div>
-                            <div class="input-group">
+                            <div class="form-group text-center">
                                 <label class="userTypeLabel" for="type">User Type: </label>
                                 <input type="radio" name="type" value="Customer" checked> Customer
                                 <input type="radio" name="type" value="Admin"> Admin
                             </div>
-
                             <div class="form-group text-center">
                                 <button type="submit" class="btn btn-submit">Register</button>
+                                <button type="reset" class="btn btn-reset"><i class="fa fa-eraser"></i> Reset</button>
                                 <a href="/">
                                     <button type="button" class="btn btn-cancel">Cancel</button>
                                 </a>

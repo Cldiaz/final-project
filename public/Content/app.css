@@ -4,6 +4,11 @@ body{
     background-repeat: repeat;
     
 }
+
+.panel {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
 .panel-green {
     border-color: #5cb85c;
 }
@@ -30,6 +35,16 @@ body{
 
 .btn{
     color: white;
+}
+
+.btn-submit {
+    background-color: #60B99A;
+}
+.btn-cancel {
+    background-color: indianred;
+}
+.btn-reset {
+    background-color: #34495E;
 }
 
 .red-required{
@@ -65,7 +80,7 @@ body{
     background-color: #60B99A;
     border: none;
 }
-.btn-block:hover, .btn-submit:hover, .btn-cancel:hover{
+.btn-block:hover, .btn-reset:hover, .btn-submit:hover, .btn-cancel:hover{
     background-color: #D3CE3D;
 }
 .bol{
@@ -78,9 +93,9 @@ body{
 .userTypeLabel {
     padding-right: 10px;
 }
-.btn-submit {
-    background-color: #60B99A;
-}
-.btn-cancel {
-    background-color: indianred;
+
+
+/* Contact Page */
+.contact-main{
+    margin-top: 40px;
 }
