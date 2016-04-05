@@ -1,31 +1,33 @@
 <% include ../partials/header.ejs %>
 <% include ../partials/navbar.ejs %>
-<main class="container">
-    <h1>Users</h1>
-
-    <a href="/users/add">Add a New User</a>
-
-    <ul class="list-group">
-        <% for (var i = 0; i < users.length; i++) { %>
-            <li class="list-group-item">
-                username: 
-                <a href="/users/<%= users[i]._id %>" title="Edit User">
-                    <%= users[i].username %>
-                </a>
-                <br />
-                password: <%= users[i].password %>
-                <br />
-                email: <%= users[i].email %>
-                <br />
-                Display Name: <%= users[i].displayName %>
-                <br />
-                Type: <%= users[i].type %>
-                <br />
-                Created: <%= users[i].created.toDateString() %>
-                <br />
-                Updated: <%= users[i].updated.toDateString() %>
-            </li>
-        <% } %>
-    </ul>
+<main class="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Users</h2><br />
+                <p>To add a new user, <a href="/users/add">Click here.</a></p>
+            </div>
+            <div class="col-md-12 panel panel-default">
+                <table class="table table-list-search">
+                    <thead>
+                        <th>Display Name</th><th>Username</th><th>Password</th><th>Email</th><th>Type</th><th>Updated</th><th>Created</th>
+                    </thead>
+                    <tbody>
+                        <% for (var i = 0; i < users.length; i++) { %>
+                            <tr>
+                                <td><a href="/users/<%= users[i]._id %>" title="Edit User"><%= users[i].displayName %></a></td>
+                                <td><%= users[i].username %></td>
+                                <td><%= users[i].password %></td>
+                                <td><%= users[i].email %></td>
+                                <td><%= users[i].type %></td>
+                                <td><%= users[i].updated.toDateString() %></td>
+                                <td><%= users[i].created.toDateString() %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </main>
 <% include ../partials/footer.ejs %>
