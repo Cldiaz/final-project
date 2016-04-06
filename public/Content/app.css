@@ -4,6 +4,9 @@ body{
     background-repeat: repeat;
     
 }
+thead{
+    background-color: #60B99A;
+}
 
 .panel {
     background-color: rgba(255, 255, 255, 0.4);
