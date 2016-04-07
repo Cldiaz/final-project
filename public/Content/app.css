@@ -1,13 +1,13 @@
 /* custom style sheet */
 body{
-    /*background-image: url("../Assets/sprinkles.png");
-    background-repeat: repeat;*/
-    background-color: #627F65;
+    background-image: url("../Assets/sprinkles.png");
+    background-repeat: repeat;
+    /*background-color: #627F65;*/
     
 }
 /*Nav Bar Changes*/
  .navbar {
-    background-color: #314033;
+    background-color: #7F7955;
     background-image: none;
     text-transform: uppercase;
  }
@@ -40,7 +40,7 @@ body{
 .navbar-inverse .navbar-nav>.active>a,
 .navbar-inverse .navbar-nav>.active>a:focus,
 .navbar-inverse .navbar-nav>.active>a:hover{
-    background-color: #7F621A;
+    background-color: #7F732F;
     background-image: none;
 }
 
