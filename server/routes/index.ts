@@ -19,7 +19,7 @@ router.get('/', (req: express.Request, res: express.Response, next: any) => {
         });
         return;
     } else {
-        return res.redirect('/users');
+        return res.redirect('/tickets');
     }
 });
 
@@ -41,7 +41,7 @@ router.post('/', passport.authenticate('local', function(req: express.Request, r
 }));
 */
 router.post('/', passport.authenticate('local', {
-    successRedirect: '/users',
+    successRedirect: '/tickets',
     failureRedirect: '/login',
     failureFlash: true
 }));
@@ -83,7 +83,7 @@ router.post('/register', (req:express.Request, res: express.Response, next:any) 
            }
            // if registration is successful
            return passport.authenticate('local')(req, res, ()=>{
-              res.redirect('/users'); 
+              res.redirect('/tickets'); 
            });
        });
 });
@@ -166,13 +166,13 @@ router.get('/login', (req:express.Request, res: express.Response, next:any) => {
         });
         return;
     } else {
-        return res.redirect('/users');
+        return res.redirect('/tickets');
     }
 });
 
 /* Process Login Request */
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/users',
+    successRedirect: '/tickets',
     failureRedirect: '/login',
     failureFlash: true
 }));
