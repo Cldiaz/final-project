@@ -1,9 +1,49 @@
 /* custom style sheet */
 body{
-    background-image: url("../Assets/sprinkles.png");
-    background-repeat: repeat;
+    /*background-image: url("../Assets/sprinkles.png");
+    background-repeat: repeat;*/
+    background-color: #627F65;
     
 }
+/*Nav Bar Changes*/
+ .navbar {
+    background-color: #314033;
+    background-image: none;
+    text-transform: uppercase;
+ }
+ .navbar-inverse .navbar-nav>li>a{
+    color: white;
+    font-weight: 100%;
+ }
+ 
+ .navbar-inverse .navbar-nav>li>a:hover{
+     color: #BF9327;  
+ }
+ .navbar-fixed-top {
+    min-height: 40px;
+}
+.navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 40px;
+}
+.navbar-inverse .navbar-text {
+    padding-top: 3px;
+    color: beige;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+    background-color: #BF9327;
+}
+.navbar-inverse .navbar-toggle{
+    border-color: whitesmoke;
+}
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:focus,
+.navbar-inverse .navbar-nav>.active>a:hover{
+    background-color: #7F621A;
+    background-image: none;
+}
+
 thead{
     background-color: #60B99A;
 }
