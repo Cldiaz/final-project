@@ -30,6 +30,49 @@ router.get('/', requireAuth, function (req, res, next) {
         }
     });
 });
+// GET my account page - show the current user in the form
+router.get('/myaccount', requireAuth, function (req, res, next) {
+    var id = req.user._id;
+    User.findById(id, function (error, User) {
+        if (error) {
+            console.log(error);
+            res.end(error);
+        }
+        else {
+            //show the edit view
+            res.render('users/edit', {
+                title: 'My Account',
+                user: User,
+                displayName: req.user ? req.user.displayName : '',
+                type: req.user ? req.user.type : ''
+            });
+        }
+    });
+});
+// POST edit page - update the selected user
+router.post('/myaccount', requireAuth, function (req, res, next) {
+    // grab the id from the url parameter
+    var id = req.user._id;
+    // create and populate a user object
+    var user = new User({
+        _id: id,
+        username: req.body.username,
+        password: req.body.password,
+        email: req.body.email,
+        displayName: req.body.displayName
+    });
+    // run the update using mongoose and our model
+    User.update({ _id: id }, user, function (error) {
+        if (error) {
+            console.log(error);
+            res.end(error);
+        }
+        else {
+            //if success update
+            res.redirect('/tickets');
+        }
+    });
+});
 // GET add page - show the blank form
 router.get('/add', requireAuth, function (req, res, next) {
     res.render('users/add', {

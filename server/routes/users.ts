@@ -17,6 +17,7 @@ function requireAuth(req: express.Request, res: express.Response, next: any){
     next();
 }
 
+
 // GET - show main users page - list all the users
 router.get('/', requireAuth,(req: express.Request, res: express.Response, next: any) => {  
     // use the Users model to query the Users collection
@@ -36,6 +37,60 @@ router.get('/', requireAuth,(req: express.Request, res: express.Response, next: 
         }
     });
 });
+
+
+// GET my account page - show the current user in the form
+router.get('/myaccount', requireAuth, (req: express.Request, res: express.Response, next: any) => {
+
+    var id = req.user._id;
+
+    User.findById(id, (error, User) => {
+        if (error) {
+            console.log(error);
+            res.end(error);
+        }
+        else {
+            //show the edit view
+            res.render('users/edit', {
+                title: 'My Account',
+                user: User,
+                displayName: req.user ? req.user.displayName : '',
+                type: req.user? req.user.type : ''
+            });
+        }
+    });
+});
+
+
+// POST edit page - update the selected user
+router.post('/myaccount', requireAuth,(req: express.Request, res: express.Response, next: any) => {
+
+    // grab the id from the url parameter
+    var id = req.user._id;
+
+    // create and populate a user object
+    var user = new User({
+        _id: id,
+        username: req.body.username,
+        password: req.body.password,
+        email: req.body.email,
+        displayName: req.body.displayName
+    });
+
+    // run the update using mongoose and our model
+    User.update({ _id: id }, user, (error) => {
+        if (error) {
+            console.log(error);
+            res.end(error);
+        }
+        else {
+            //if success update
+            res.redirect('/tickets');
+        }
+    });
+});
+
+
 // GET add page - show the blank form
 router.get('/add', requireAuth,(req: express.Request, res: express.Response, next: any)=> {
     res.render('users/add', {
@@ -87,6 +142,8 @@ router.get('/:id', requireAuth, (req: express.Request, res: express.Response, ne
         }
     });
 });
+
+
 // POST edit page - update the selected user
 router.post('/:id', requireAuth,(req: express.Request, res: express.Response, next: any) => {
 
@@ -115,6 +172,8 @@ router.post('/:id', requireAuth,(req: express.Request, res: express.Response, ne
         }
     });
 });
+
+
 // GET delete user
 router.get('/delete/:id', requireAuth,(req: express.Request, res: express.Response, next: any) => {
 
@@ -132,6 +191,8 @@ router.get('/delete/:id', requireAuth,(req: express.Request, res: express.Respon
         }
     });
 });
+
+
 
 // make this public
 module.exports = router;

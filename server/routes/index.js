@@ -13,7 +13,8 @@ router.get('/', function (req, res, next) {
         res.render('login', {
             title: 'Login',
             messages: req.flash('loginMessage'),
-            displayName: req.user ? req.user.displayName : ''
+            displayName: req.user ? req.user.displayName : '',
+            type: req.user ? req.user.type : ''
         });
         return;
     }
@@ -49,7 +50,8 @@ router.get('/register', function (req, res, next) {
         res.render('register', {
             title: 'Register',
             messages: req.flash('registerMessage'),
-            displayName: req.user ? req.user.displayName : ''
+            displayName: req.user ? req.user.displayName : '',
+            type: req.user ? req.user.type : ''
         });
         return;
     }
@@ -74,7 +76,8 @@ router.post('/register', function (req, res, next) {
             return res.render('register', {
                 title: 'Register',
                 messages: req.flash('registerMessage'),
-                displayName: req.user ? req.user.displayName : ''
+                displayName: req.user ? req.user.displayName : '',
+                type: req.user ? req.user.type : ''
             });
         }
         // if registration is successful
@@ -92,7 +95,8 @@ router.get('/logout', function (req, res) {
 router.get('/products', function (req, res, next) {
     res.render('index', {
         title: 'Products',
-        displayName: req.user ? req.user.displayName : '' });
+        displayName: req.user ? req.user.displayName : ''
+    });
 });
 /* GET services page. */
 router.get('/services', function (req, res, next) {
@@ -113,7 +117,9 @@ router.get('/contact', function (req, res, next) {
     res.render('contact', {
         title: 'Contact',
         messages: null,
-        displayName: req.user ? req.user.displayName : '' });
+        displayName: req.user ? req.user.displayName : '',
+        type: req.user ? req.user.type : ''
+    });
 });
 /* Email processing */
 router.post('/contact', function (req, res, next) {
@@ -145,7 +151,8 @@ router.get('/login', function (req, res, next) {
         res.render('login', {
             title: 'Login',
             messages: req.flash('loginMessage'),
-            displayName: req.user ? req.user.displayName : ''
+            displayName: req.user ? req.user.displayName : '',
+            type: req.user ? req.user.type : ''
         });
         return;
     }

@@ -15,7 +15,8 @@ router.get('/', (req: express.Request, res: express.Response, next: any) => {
         res.render('login', {
             title: 'Login',
             messages: req.flash('loginMessage'),
-            displayName: req.user ? req.user.displayName : ''
+            displayName: req.user ? req.user.displayName : '',
+            type: req.user? req.user.type : ''
         });
         return;
     } else {
@@ -52,7 +53,8 @@ router.get('/register', (req:express.Request, res: express.Response, next:any) =
         res.render('register', {
             title: 'Register',
             messages: req.flash('registerMessage'),
-            displayName: req.user ? req.user.displayName : ''
+            displayName: req.user ? req.user.displayName : '',
+            type: req.user? req.user.type : ''
         });
         return;
     } else {
@@ -78,7 +80,8 @@ router.post('/register', (req:express.Request, res: express.Response, next:any) 
                return res.render('register', {
                     title: 'Register',
                     messages: req.flash('registerMessage'),
-                    displayName: req.user ? req.user.displayName : ''
+                    displayName: req.user ? req.user.displayName : '',
+                    type: req.user? req.user.type : ''
                 });
            }
            // if registration is successful
@@ -103,7 +106,8 @@ router.get('/logout', (req:express.Request, res: express.Response) => {
 router.get('/products', (req: express.Request, res: express.Response, next: any) => {
     res.render('index', { 
         title: 'Products',
-        displayName: req.user ? req.user.displayName : ''});
+        displayName: req.user ? req.user.displayName : ''
+    });
 });
 
 /* GET services page. */
@@ -127,7 +131,9 @@ router.get('/contact', (req: express.Request, res: express.Response, next: any) 
     res.render('contact', { 
         title: 'Contact', 
         messages: null,
-        displayName: req.user ? req.user.displayName : '' });
+        displayName: req.user ? req.user.displayName : '',
+        type: req.user? req.user.type : ''
+    });
 });
 
 /* Email processing */
@@ -162,7 +168,8 @@ router.get('/login', (req:express.Request, res: express.Response, next:any) => {
         res.render('login', {
             title: 'Login',
             messages: req.flash('loginMessage'),
-            displayName: req.user ? req.user.displayName : ''
+            displayName: req.user ? req.user.displayName : '',
+            type: req.user? req.user.type : ''
         });
         return;
     } else {

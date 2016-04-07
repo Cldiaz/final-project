@@ -76,21 +76,22 @@ thead{
 }
 
 .btn-submit {
-    background-color: #60B99A;
+    background-color: #FF9F1C;
 }
 .btn-cancel {
-    background-color: indianred;
+    background-color: #FDFFFC;
+    color: #252839;
 }
 .btn-reset {
-    background-color: #34495E;
+    background-color: #41EAD4;
 }
 
 .btn-delete {
-    background-color: #900C3F;
+    background-color: #F71735;
 }
 
 .red-required{
-    color: #E60F0F;
+    color: #E15554;
 }
 
 /* Landing Page */
@@ -103,6 +104,11 @@ thead{
   margin: 0 auto;
   border: 1px solid #cccccc;
 }
+
+.form-signin-heading{
+    font-size: 35pt;
+}
+
 .input-group{
     height: 45px;
     margin-bottom: 15px;
