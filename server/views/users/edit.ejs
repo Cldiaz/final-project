@@ -3,37 +3,40 @@
 <main class="main">
     <div class="container">
         <div class="row">
-            <h2>Edit User</h2>
-            <form method="post">
-                <div class="form-group">
-                    <label for="username" class="col-sm-2">Username: *</label>
-                    <input name="username" required value="<%= user.username %>" />
-                </div>
-                <div class="form-group">
-                    <label for="password" class="col-sm-2">Password: *</label>
-                    <input name="password" required value="<%= user.password %>" />
-                </div>
-                <div class="form-group">
-                    <label for="email" class="col-sm-2">Email: *</label>
-                    <input name="email" required value="<%= user.email %>" />
-                </div>
-                <div class="form-group">
-                    <label for="displayName" class="col-sm-2">Display Name: *</label>
-                    <input name="text" required value="<%= user.displayName %>" />
-                </div>
-                <div class="form-group">
-                    <label for="type">User Type: </label>
-                    <input type="radio" name="type" value="Customer" checked> Customer
-                    <input type="radio" name="type" value="Admin"> Admin
-                </div>
-                
-                <button type="submit" class="col-sm-offset-2 btn btn-success">Submit</button>
-                <button type="reset" class="col-sm-offset-2 btn btn-warning">Reset</button>
-                <a href="/users/delete/<%= user._id %>" title="Delete" onclick="return confirm('Are you sure you want to delete this?');">
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </a>
-
-            </form>
+            <div class="col-md-4 col-md-offset-4 panel">
+                <h2 class="text-center">My Account</h2><br/>
+                <form method="post">
+                    <div class="form-group">
+                        <label for="username">Username: *</label>
+                        <input name="username" required value="<%= user.username %>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password: *</label>
+                        <input name="password" required value="<%= user.password %>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email: *</label>
+                        <input name="email" required value="<%= user.email %>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="displayName">Display Name: *</label>
+                        <input name="text" required value="<%= user.displayName %>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="type">User Type: </label>
+                        <input type="radio" name="type" value="Customer" checked> Customer
+                        <input type="radio" name="type" value="Admin"> Admin
+                    </div>
+                    <button type="submit" class="btn btn-submit"> Edit </button>
+                    <button type="reset" class="btn btn-reset">Reset</button>
+                    <a href="/users/delete/<%= user._id %>" title="Delete" onclick="return confirm('Are you sure you want to delete this?');">
+                        <button type="button" class="btn btn-delete">Delete</button>
+                    </a>
+                    <a href="/">
+                        <button type="button" class="btn btn-cancel">Cancel</button>
+                    </a>
+                </form>
+            </div>
         </div>
     </div>
 </main>

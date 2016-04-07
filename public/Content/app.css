@@ -10,6 +10,7 @@ thead{
 
 .panel {
     background-color: rgba(255, 255, 255, 0.4);
+    padding-bottom: 30px;
 }
 
 .panel-green {
@@ -50,6 +51,10 @@ thead{
     background-color: #34495E;
 }
 
+.btn-delete {
+    background-color: #900C3F;
+}
+
 .red-required{
     color: #E60F0F;
 }
@@ -83,7 +88,7 @@ thead{
     background-color: #60B99A;
     border: none;
 }
-.btn-block:hover, .btn-reset:hover, .btn-submit:hover, .btn-cancel:hover{
+.btn-block:hover, .btn-reset:hover, .btn-delete:hover, .btn-submit:hover, .btn-cancel:hover{
     background-color: #D3CE3D;
 }
 .bol{
