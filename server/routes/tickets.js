@@ -66,6 +66,7 @@ router.get('/', requireAuth, function (req, res, next) {
                     title: 'Tickets',
                     tickets: tickets,
                     typeU: typeUser,
+                    type: req.user.type,
                     displayName: req.user ? req.user.displayName : ''
                 });
             }
@@ -90,6 +91,7 @@ router.get('/mytickets', requireAuth, function (req, res, next) {
             res.render('tickets/mytickets', {
                 title: 'My Tickets',
                 tickets: tickets,
+                type: req.user.type,
                 displayName: req.user ? req.user.displayName : ''
             });
         }
@@ -99,6 +101,7 @@ router.get('/mytickets', requireAuth, function (req, res, next) {
 router.get('/add', requireAuth, function (req, res, next) {
     res.render('tickets/add', {
         title: 'Create New Ticket',
+        type: req.user.type,
         displayName: req.user ? req.user.displayName : ''
     });
 });
@@ -142,6 +145,7 @@ router.get('/:id', requireAuth, function (req, res, next) {
                 title: 'Ticket Details',
                 ticket: Ticket,
                 typeU: typeUser,
+                type: req.user.type,
                 displayName: req.user ? req.user.displayName : ''
             });
         }
