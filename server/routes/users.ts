@@ -30,7 +30,8 @@ router.get('/', requireAuth,(req: express.Request, res: express.Response, next: 
             res.render('users/index', {
                 title: 'Users',
                 users: users,
-                displayName: req.user ? req.user.displayName : ''
+                displayName: req.user ? req.user.displayName : '',
+                type: req.user? req.user.type : ''
             });
         }
     });
@@ -39,9 +40,11 @@ router.get('/', requireAuth,(req: express.Request, res: express.Response, next: 
 router.get('/add', requireAuth,(req: express.Request, res: express.Response, next: any)=> {
     res.render('users/add', {
         title: 'Add a New User',
-        displayName: req.user ? req.user.displayName : ''
+        displayName: req.user ? req.user.displayName : '',
+        type: req.user? req.user.type : ''
     });
 });
+
 // POST add page - save the new user
 router.post('/add',requireAuth, (req: express.Request, res: express.Response, next: any) => {
     User.create({
@@ -61,6 +64,8 @@ router.post('/add',requireAuth, (req: express.Request, res: express.Response, ne
         }
     })
 });
+
+
 // GET edit page - show the current user in the form
 router.get('/:id', requireAuth, (req: express.Request, res: express.Response, next: any) => {
 
@@ -76,7 +81,8 @@ router.get('/:id', requireAuth, (req: express.Request, res: express.Response, ne
             res.render('users/edit', {
                 title: 'User Details',
                 user: User,
-                displayName: req.user ? req.user.displayName : ''
+                displayName: req.user ? req.user.displayName : '',
+                type: req.user? req.user.type : ''
             });
         }
     });
