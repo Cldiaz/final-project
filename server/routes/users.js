@@ -24,7 +24,8 @@ router.get('/', requireAuth, function (req, res, next) {
             res.render('users/index', {
                 title: 'Users',
                 users: users,
-                displayName: req.user ? req.user.displayName : ''
+                displayName: req.user ? req.user.displayName : '',
+                type: req.user ? req.user.type : ''
             });
         }
     });
@@ -33,7 +34,8 @@ router.get('/', requireAuth, function (req, res, next) {
 router.get('/add', requireAuth, function (req, res, next) {
     res.render('users/add', {
         title: 'Add a New User',
-        displayName: req.user ? req.user.displayName : ''
+        displayName: req.user ? req.user.displayName : '',
+        type: req.user ? req.user.type : ''
     });
 });
 // POST add page - save the new user
@@ -68,7 +70,8 @@ router.get('/:id', requireAuth, function (req, res, next) {
             res.render('users/edit', {
                 title: 'User Details',
                 user: User,
-                displayName: req.user ? req.user.displayName : ''
+                displayName: req.user ? req.user.displayName : '',
+                type: req.user ? req.user.type : ''
             });
         }
     });

@@ -13,28 +13,41 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">    
       <ul class="nav navbar-nav navbar-right">
-        <% if(title === "Login") { %>  
-            <li><a href="/register">Register</a></li>            
+        <!-- Not logged in -->
+        <% if(!displayName && title === "Login") { %> 
+            <li><a href="/register">Register</a></li> 
             <li><a href="/contact">Contact Us</a></li>
-        <% } else if(title === "Users") { %>
-            <% if(displayName){ %>
+            
+        <!-- If they are login as Admin -->
+        <% } else if(displayName && type === "Admin") { %>
+        
+        
+        <!-- ADD ACTIVE NAVBAR PART LATER -->
+        
+        
                 <li class="active"><a href="/users">Users</a></li>
-                <li><a href="/tickets">Tickets</a></li>
-            <% } %>
+                <li><a href="/tickets">Dashboard</a></li>
                 <li><a href="/contact">Contact Us</a></li>
-        <% } else if(title === "Tickets") { %>
-            <% if(displayName){ %>
-                <li><a href="/users">Users</a></li>
-                <li class="active"><a href="/tickets">Tickets</a></li>
-            <% } %>
-            <li><a href="/contact">Contact Us</a></li>
-         <% } %>
-         <% if(displayName){ %>
+                
+        <!-- If they are login as Customer-->        
+        <% } else if(displayName && type === "Customer") { %>
+        
+        
+        <!-- ADD ACTIVE NAVBAR PART LATER -->
+        
+        
+                <li class="active"><a href="/mytickets">My Tickets</a></li>
+                <li><a href="/users/edit">My Account</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            
+         <% } if(displayName){ %>
                 <li class="navbar-text"><i class="fa fa-user"></i> Wecome, <%= displayName %></li>
                 <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
          <% } else { %>
                 <li><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
          <% } %>
+               
+            
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
