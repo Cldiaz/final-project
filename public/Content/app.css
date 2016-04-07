@@ -3,15 +3,47 @@ body{
     /*background-image: url("../Assets/sprinkles.png");
     background-repeat: repeat;*/
     background-color: #252839;
+    font-family: 'Open Sans', sans-serif;
     
 }
+/*Navbar Changes*/
+.navbar-nav>li>a{
+    color: white;
+}
+.navbar-nav>li>a:hover{
+    background-color: #f2b632;
+}
+.navbar-nav>li>a:active{
+    background-color: #f2b632;
+}
+.navbar-transparent .navbar-text {
+    padding-top: 3px;
+    color: beige;
+}
+.navbar-transparent .navbar-toggle:focus, .navbar-transparent .navbar-toggle:hover{
+    background-color: #BF9327;
+}
+.navbar-transparent .navbar-toggle{
+    border-color: whitesmoke;
+}
+.navbar-transparent .navbar-nav>.active>a,
+.navbar-transparent .navbar-nav>.active>a:focus,
+.navbar-transparent .navbar-nav>.active>a:hover{
+    background-color: #7F621A;
+    background-image: none;
+}
 
+hr{
+    max-width: 50px;
+    border-color: #f2b632;
+    border-width: 3px;
+}
 thead{
     background-color: #60B99A;
 }
 
 .panel {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: #677077;
     padding-bottom: 30px;
 }
 
