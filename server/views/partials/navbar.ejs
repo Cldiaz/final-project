@@ -14,31 +14,50 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">    
       <ul class="nav navbar-nav navbar-right">
         <!-- If they are login as Admin -->
-        <% if(displayName && type === "Admin") { %>
-            <% if(title === "Users") {%>
+        <% if(displayName && type === "Admin"){ %>
+            <% if(title === "Users"){%>
                 <li class="active"><a href="/users">Users</a></li>
                 <li><a href="/tickets">Dashboard</a></li>
-            <% } else if(title === "Dashboard") {%>
+                <li><a href="/contact">Contact Us</a></li>
+                <li class="navbar-text"><i class="fa fa-user"></i> Wecome, <%= displayName %></li>
+                <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+            <% } else if(title === "Dashboard"){%>
                 <li><a href="/users">Users</a></li>
                 <li class="active"><a href="/tickets">Dashboard</a></li>
-            <% } %>
-        <!-- If they are login as Customer-->        
-        <% } else if(displayName && type === "Customer") { %>
-            <% if(title === "My Tickets") { %>
-                <li class="active"><a href="/mytickets">My Tickets</a></li>
-                <li><a href="/users/myaccount">Edit Account</a></li>
-            <% } else if(title === "My Account"){ %>
-                <li><a href="/mytickets">My Tickets</a></li>
-                <li class="active"><a href="/users/myaccount">Edit Account</a></li>
-            <% } %>
-         <% } if(displayName){ %>
-            <% if(title === "Contact"){ %>
+                <li><a href="/contact">Contact Us</a></li>
+                <li class="navbar-text"><i class="fa fa-user"></i> Wecome, <%= displayName %></li>
+                <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+            <% }else if(title === "Contact"){ %>
+                <li><a href="/users">Users</a></li>
+                <li><a href="/tickets">Dashboard</a></li>
                 <li class="active"><a href="/contact">Contact Us</a></li>
                 <li class="navbar-text"><i class="fa fa-user"></i> Wecome, <%= displayName %></li>
                 <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
-            <% } %>    
-         <% } else { %>
-            <$ if(title === "Register") $>
+            <% } %>
+        <!-- If they are login as Customer-->        
+        <% } else if(displayName && type === "Customer"){ %>
+            <% if(title === "My Tickets"){ %>
+                <li class="active"><a href="/tickets/mytickets">My Tickets</a></li>
+                <li><a href="/users/myaccount">Edit Account</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li class="navbar-text"><i class="fa fa-user"></i> Wecome, <%= displayName %></li>
+                <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+            <% } else if(title === "My Account"){ %>
+                <li><a href="/tickets/mytickets">My Tickets</a></li>
+                <li class="active"><a href="/users/myaccount">Edit Account</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li class="navbar-text"><i class="fa fa-user"></i> Wecome, <%= displayName %></li>
+                <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+            <% }else if(title === "Contact"){ %>
+                <li><a href="/tickets/mytickets">My Tickets</a></li>
+                <li><a href="/users/myaccount">Edit Account</a></li>
+                <li class="active"><a href="/contact">Contact Us</a></li>
+                <li class="navbar-text"><i class="fa fa-user"></i> Wecome, <%= displayName %></li>
+                <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+            <% } %>
+         <!-- not authenticated -->    
+         <% } else{ %>
+            <% if(title === "Register"){ %>
                 <li class="active"><a href="/register">Register</a></li> 
                 <li><a href="/contact">Contact Us</a></li>
                 <li><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
@@ -46,7 +65,7 @@
                 <li><a href="/register">Register</a></li> 
                 <li class="active"><a href="/contact">Contact Us</a></li>
                 <li><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>  
-            <% } else { %>
+            <% } else{ %>
                 <li><a href="/register">Register</a></li> 
                 <li><a href="/contact">Contact Us</a></li>
                 <li class="active"><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li> 
