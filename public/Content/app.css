@@ -1,16 +1,28 @@
 /* custom style sheet */
 html{
     position: relative;
-    min-height: 100%;
 }
 body{
     /*background-image: url("../Assets/sprinkles.png");
     background-repeat: repeat;*/
     background-color: #252839;
     font-family: 'Open Sans', sans-serif;
-    margin-bottom: 60px;
-    
+    height: 100%;
 }
+
+/* for Sticky footer */
+.main {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto 100px;
+}
+
+.footer{
+    height: 60px;
+}
+
 /*Navbar Changes*/
 .navbar-nav>li>a{
     color: white;
@@ -44,6 +56,7 @@ hr{
     border-color: #f2b632;
     border-width: 3px;
 }
+
 thead{
     background-color: #60B99A;
 }

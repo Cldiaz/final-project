@@ -15,7 +15,7 @@
       <ul class="nav navbar-nav navbar-right">
         <!-- If they are login as Admin -->
         <% if(displayName && type === "Admin"){ %>
-            <% if(title === "Users"){%>
+            <% if(title === "Users" || title === "User Details"){%>
                 <li class="active"><a href="/users">Users</a></li>
                 <li><a href="/tickets">Dashboard</a></li>
                 <li><a href="/contact">Contact Us</a></li>

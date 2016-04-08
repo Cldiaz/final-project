@@ -59,7 +59,8 @@ router.post('/myaccount', requireAuth, function (req, res, next) {
         username: req.body.username,
         password: req.body.password,
         email: req.body.email,
-        displayName: req.body.displayName
+        displayName: req.body.displayName,
+        type: req.body.type
     });
     // run the update using mongoose and our model
     User.update({ _id: id }, user, function (error) {
