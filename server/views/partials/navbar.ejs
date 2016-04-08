@@ -36,7 +36,7 @@
             <% } %>
         <!-- If they are login as Customer-->        
         <% } else if(displayName && type === "Customer"){ %>
-            <% if(title === "My Tickets"){ %>
+            <% if(title === "My Tickets" || title === "Create New Ticket"){ %>
                 <li class="active"><a href="/tickets/mytickets">My Tickets</a></li>
                 <li><a href="/users/myaccount">Edit Account</a></li>
                 <li><a href="/contact">Contact Us</a></li>
