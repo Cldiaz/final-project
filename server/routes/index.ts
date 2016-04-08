@@ -11,17 +11,21 @@ import User = userModel.User;
 
 /* GET login landing page */
 router.get('/', (req: express.Request, res: express.Response, next: any) => {
-    if(!req.user) {
-        res.render('login', {
-            title: 'Login',
-            messages: req.flash('loginMessage'),
-            displayName: req.user ? req.user.displayName : '',
-            type: req.user? req.user.type : ''
-        });
-        return;
-    } else {
-        return res.redirect('/tickets');
-    }
+    res.render('index', { 
+        title: 'Products',
+        displayName: req.user ? req.user.displayName : ''
+    });
+    // if(!req.user) {
+    //     res.render('login', {
+    //         title: 'Login',
+    //         messages: req.flash('loginMessage'),
+    //         displayName: req.user ? req.user.displayName : '',
+    //         type: req.user? req.user.type : ''
+    //     });
+    //     return;
+    // } else {
+    //     return res.redirect('/tickets');
+    // }
 });
 
 /* Process login request */

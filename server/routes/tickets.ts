@@ -138,22 +138,43 @@ router.post('/add', requireAuth, (req: express.Request, res: express.Response, n
 router.get('/:id', requireAuth, (req: express.Request, res: express.Response, next: any) => {
     var id = req.params.id;
     var typeUser = req.user ? req.user.type : '';
-    Ticket.findById(id, (error, Ticket) => {
-        if (error) {
-            console.log(error);
-            res.end(error);
-        }
-        else {
-            //show the edit view
-            res.render('tickets/edit', {
-                title: 'Ticket Details',
-                ticket: Ticket,
-                typeU: typeUser,
-                type: req.user.type,
-                displayName: req.user ? req.user.displayName : ''
-            });
-        }
-    });
+    
+    if( typeUser == 'Admin'){
+        Ticket.findById(id, (error, Ticket) => {
+            if (error) {
+                console.log(error);
+                res.end(error);
+            }
+            else {
+                //show the edit view
+                res.render('tickets/edit', {
+                    title: 'Ticket Details',
+                    ticket: Ticket,
+                    typeU: typeUser,
+                    type: req.user.type,
+                    displayName: req.user ? req.user.displayName : ''
+                });
+            }
+        });
+    }
+    else{
+        Ticket.findById(id, (error, Ticket) => {
+            if (error) {
+                console.log(error);
+                res.end(error);
+            }
+            else {
+                //show the edit view
+                res.render('tickets/details', {
+                    title: 'Ticket Details',
+                    ticket: Ticket,
+                    typeU: typeUser,
+                    type: req.user.type,
+                    displayName: req.user ? req.user.displayName : ''
+                });
+            }
+        });
+    }
 });
 // POST edit page - update the selected ticket
 router.post('/:id', requireAuth,(req: express.Request, res: express.Response, next: any) => {

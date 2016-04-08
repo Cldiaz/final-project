@@ -1,0 +1,30 @@
+.image-bg-fluid-height {
+    background: url('/Assets/banner-office4.png') no-repeat center center scroll;
+    padding: 100px 0;
+    height: 850px;
+    text-align: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    color: white;
+    
+}
+.image-bg-fluid-height h1{
+    font-size: 40pt;
+}
+.img-center {
+    margin: 0 auto;
+}
+.black-bg{
+    background-color: lightgrey;
+    color: black;
+}
+.gray-bg{
+    background-color: #424648;
+    color: white;
+}
+.two-colors-banner{
+    padding: 2em;
+    height: 300px;
+}

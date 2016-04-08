@@ -2,7 +2,7 @@
 <% include ../partials/navbar.ejs %>
 <main class="container">
     <div class="white-bg">
-    <img  class="center-block" src="/Assets/logo1.png">
+    <img  class="center-block" src="/Assets/bug.png" style="width:150px">
     <h1>Dashboard <%= typeU%></h1>
     <div class="row">
     <div class="col-sm-4">
@@ -57,7 +57,7 @@
         </div>
     </div>  
     </div>
-    
+        <a href="/tickets/add">Add a New Ticket</a>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -81,46 +81,7 @@
                     </tr>
                 <% } %>
             </tbody>
-        </table>
-    
-    
-    <a href="/tickets/add">Add a New Ticket</a>
-
-    <ul class="list-group">
-        <% for (var i = 0; i < tickets.length; i++) { %>
-            <li class="list-group-item">
-                Ticket Title: 
-                <a href="/tickets/<%= tickets[i]._id %>" title="Edit Ticket">
-                    <%= tickets[i].ticketTitle %>
-                </a>
-                <br />
-                Description: <%= tickets[i].ticketDescription %>
-                <br />
-                Priority: <%= tickets[i].ticketPriority %>
-                <br />
-                
-                <br />
-                Customer Name: <%= tickets[i].customerName %>
-                <br />
-                Customer Phone: <%= tickets[i].customerPhone %>
-                <br />
-                id: <%= tickets[i].createdBy %>
-                <br />
-                Incident Narrative :
-                <br />
-                <% if (tickets[i].incidentNarrative !== undefined) 
-                   {
-                        for (var c = 0; c < tickets[i].incidentNarrative.length; c++ ){%>
-                        Comment: <%= tickets[i].incidentNarrative[c].comment %> || Date: <%= tickets[i].incidentNarrative[c].commentDate.toDateString() %>
-                        <br>
-                       <%}
-                   }
-                %>
-                <br />
-                Ticket Number: <%= tickets[i].ticketNumber %>
-            </li>
-        <% } %>
-    </ul>
+        </table> 
    </div> <!--./white-bg-->
 </main>
 <% include ../partials/footer.ejs %>

@@ -134,22 +134,42 @@ router.post('/add', requireAuth, function (req, res, next) {
 router.get('/:id', requireAuth, function (req, res, next) {
     var id = req.params.id;
     var typeUser = req.user ? req.user.type : '';
-    Ticket.findById(id, function (error, Ticket) {
-        if (error) {
-            console.log(error);
-            res.end(error);
-        }
-        else {
-            //show the edit view
-            res.render('tickets/edit', {
-                title: 'Ticket Details',
-                ticket: Ticket,
-                typeU: typeUser,
-                type: req.user.type,
-                displayName: req.user ? req.user.displayName : ''
-            });
-        }
-    });
+    if (typeUser == 'Admin') {
+        Ticket.findById(id, function (error, Ticket) {
+            if (error) {
+                console.log(error);
+                res.end(error);
+            }
+            else {
+                //show the edit view
+                res.render('tickets/edit', {
+                    title: 'Ticket Details',
+                    ticket: Ticket,
+                    typeU: typeUser,
+                    type: req.user.type,
+                    displayName: req.user ? req.user.displayName : ''
+                });
+            }
+        });
+    }
+    else {
+        Ticket.findById(id, function (error, Ticket) {
+            if (error) {
+                console.log(error);
+                res.end(error);
+            }
+            else {
+                //show the edit view
+                res.render('tickets/details', {
+                    title: 'Ticket Details',
+                    ticket: Ticket,
+                    typeU: typeUser,
+                    type: req.user.type,
+                    displayName: req.user ? req.user.displayName : ''
+                });
+            }
+        });
+    }
 });
 // POST edit page - update the selected ticket
 router.post('/:id', requireAuth, function (req, res, next) {
