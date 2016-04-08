@@ -1,9 +1,14 @@
 /* custom style sheet */
+html{
+    position: relative;
+    min-height: 100%;
+}
 body{
     /*background-image: url("../Assets/sprinkles.png");
     background-repeat: repeat;*/
     background-color: #252839;
     font-family: 'Open Sans', sans-serif;
+    margin-bottom: 60px;
     
 }
 /*Navbar Changes*/
@@ -46,6 +51,9 @@ thead{
 .panel {
     background-color: #677077;
     padding-bottom: 30px;
+}
+.panel-body-white{
+    background-color: white;
 }
 
 .panel-green {
@@ -103,7 +111,7 @@ thead{
     background-color: #FF9F1C;
 }
 .red-required{
-    color: #E15554;
+    color: darkred;
 }
 
 /* Landing Page */

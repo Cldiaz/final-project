@@ -5,7 +5,6 @@
     <h1 class="text-center">Ticket Details:  #<%= ticket.ticketNumber %></h1>
     <div class="row">
         <div class="col-sm-6">
-            <% if(typeU == 'Customer') var isDisabled = "disabled"; %>
             <form method="post">
                 <fieldset class="form-group">
                     <label for="ticketTitle">Ticket Title: *</label>
@@ -17,12 +16,8 @@
                 </fieldset>
 
                 <fieldset class="form-group">
-                    <label for="ticketUrgency">Ticket Urgency: *</label>
-                    <% if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Closed') { %>
-                        <select class="form-control" name="ticketUrgency" id="sel1" disabled <%=isDisabled%>>
-                    <% } else { %>
-                        <select class="form-control" name="ticketUrgency" id="sel1" <%=isDisabled%>>
-                    <% } %>
+                    <label for="ticketUrgency">Ticket Urgency: *</label>                    
+                    <select class="form-control" name="ticketUrgency" id="sel1" disabled>                   
                         <% if (ticket.ticketUrgency == 'HIGH') { %>
                             <option>LOW</option>
                             <option>MEDIUM</option>
@@ -41,11 +36,7 @@
                 
                 <fieldset class="form-group">
                     <label for="ticketImpact">Ticket Impact: *</label>
-                    <% if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Closed') { %>
-                        <select class="form-control" name="ticketImpact" id="sel1" disabled <%=isDisabled%>>
-                    <% } else { %>       
-                        <select class="form-control" name="ticketImpact" id="sel1" <%=isDisabled%>>
-                    <% } %>    
+                    <select class="form-control" name="ticketImpact" id="sel1" disabled>
                         <% if (ticket.ticketImpact == 'HIGH') { %>
                             <option>LOW</option>
                             <option>MEDIUM</option>
@@ -71,74 +62,43 @@
                     <label for="customerPhone">Customer Phone: *</label>
                     <input class="form-control" type="text" name="customerPhone" required value="<%= ticket.customerPhone %>"disabled/>
                 </fieldset>
-                <% if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Closed') { %>
+                
                 <fieldset class="form-group">
                     <label for="ticketStatus">Ticket Status: *</label>
                     <select class="form-control" name="ticketStatus" id="sel2" disabled>
+                        <% if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Closed') { %>
                         <option>New</option>
                         <option>Picked Up</option>
                         <option>Assigned</option>
                         <option>Resolved</option>
                         <option selected>Closed</option>
-                    </select>
-                </fieldset>
-                
-               
-                
-                <% } else if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Resolved') {%>
-                <fieldset class="form-group">
-                    <label for="ticketStatus" >Ticket Status: *</label>
-                    <select class="form-control" name="ticketStatus" id="sel2">
+                        <% } else if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Resolved') {%>
                         <option>New</option>
                         <option>Picked Up</option>
                         <option>Assigned</option>
                         <option selected>Resolved</option>
                         <option>Closed</option>
-                    </select>
-                </fieldset>
-                
-                
-                <% } else if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Assigned') {%>
-                <fieldset class="form-group">
-                    <label for="ticketStatus">Ticket Status: *</label>
-                    <select class="form-control" name="ticketStatus" id="sel2" <%=isDisabled%>>
+                        <% } else if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Assigned') {%>
                         <option>New</option>
                         <option>Picked Up</option>
                         <option selected>Assigned</option>
                         <option>Resolved</option>
                         <option>Closed</option>
-                    </select>
-                </fieldset>
-                
-                
-                <% } else if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Picked Up') {%>
-                <fieldset class="form-group">
-                    <label for="ticketStatus">Ticket Status: *</label>
-                    <select  class="form-control" name="ticketStatus" id="sel2" <%=isDisabled%>>
+                        <% } else if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'Picked Up') {%>
                         <option>New</option>
                         <option selected>Picked Up</option>
                         <option>Assigned</option>
                         <option>Resolved</option>
                         <option>Closed</option>
-                    </select>
-                </fieldset>
-                
-                
-                <% } else if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'New') {%>
-                <fieldset class="form-group">
-                    <label for="ticketStatus">Ticket Status: *</label>
-                    <select  class="form-control" name="ticketStatus" id="sel2" <%=isDisabled%>>
+                        <% } else if (ticket.incidentNarrative[ticket.incidentNarrative.length - 1].ticketStatus  == 'New') {%>
                         <option selected>New</option>
                         <option>Picked Up</option>
                         <option>Assigned</option>
                         <option>Resolved</option>
                         <option>Closed</option>
+                        <% } %>
                     </select>
                 </fieldset>
-                
-                
-                <% } %>
-
              </form>
         </div>      
     

@@ -6,7 +6,7 @@
     <h1>Dashboard <%= typeU%></h1>
     <div class="row">
     <div class="col-sm-4">
-        <div class = "panel panel-primary">
+        <div class = "panel panel-primary  panel-body-white">
             <div class = "panel-heading">
                 <i class="fa fa-envelope fa-5x"></i>
                 <h3 class = "panel-title text-right">
@@ -15,15 +15,15 @@
                             if(tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus  == 'New')
                             {number++;}
                     }%> 
-                    <%= number %> New Incidents</h3>
+                    <span class="large-number"><%= number %></span> New Incidents</h3>
             </div>
             <div class = "panel-body">
-            Total of new incidents reported
+            Total of incidents assigned
             </div>
         </div>
     </div>     
     <div class="col-sm-4">
-        <div class = "panel panel-green">
+        <div class = "panel panel-green  panel-body-white">
             <div class = "panel-heading">
                 <i class="fa fa-spinner fa-5x"></i>
                 <h3 class = "panel-title text-right">
@@ -32,7 +32,7 @@
                             if(tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus  != 'New' && tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus  != 'Closed' )
                             {number++;}
                     }%> 
-                    <%= number %> In Progress Incidents</h3>
+                    <span class="large-number"><%= number %></span> In Progress Incidents</h3>
             </div>
             <div class = "panel-body">
             Total of incidents assigned
@@ -40,7 +40,7 @@
         </div>
     </div> 
     <div class="col-sm-4">
-        <div class = "panel panel-red">
+        <div class = "panel panel-red  panel-body-white">
             <div class = "panel-heading">
                 <i class="fa fa-check-square fa-5x"></i>
                 <h3 class = "panel-title text-right">
@@ -49,7 +49,7 @@
                             if(tickets[i].incidentNarrative[tickets[i].incidentNarrative.length - 1].ticketStatus  == 'Closed')
                             {number++;}
                     }%> 
-                    <%= number %> Incidents Incidents</h3>
+                    <span class="large-number"><%= number %></span> Incidents Incidents</h3>
             </div>
             <div class = "panel-body">
             Total of closed incidents

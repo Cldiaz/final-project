@@ -1,7 +1,7 @@
 .image-bg-fluid-height {
     background: url('/Assets/banner-office4.png') no-repeat center center scroll;
     padding: 100px 0;
-    height: 850px;
+    height: 845px;
     text-align: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -27,4 +27,20 @@
 .two-colors-banner{
     padding: 2em;
     height: 300px;
+}
+.button-group{
+    padding-top: 4em;
+}
+.footer {
+    background-color: darkgray;
+}
+.container .text-muted {
+    margin: 20px 0;
+    color: black;
+}
+.large-number{
+    font-size: 40pt;
+}
+.textarea {
+    resize: none;
 }

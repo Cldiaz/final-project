@@ -1,10 +1,10 @@
 <% include ../partials/header.ejs %>
 <% include ../partials/navbar.ejs %>
-<main class="container">
-<div class="white-bg">  
+<main class="container white-bg">
+<!--<div class="white-bg">  -->
     <h1 class="text-center">Ticket Details:  #<%= ticket.ticketNumber %></h1>
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-sm-6">
             <% if(typeU == 'Customer') var isDisabled = "disabled"; %>
             <form method="post">
                 <fieldset class="form-group">
@@ -155,16 +155,15 @@
                 <% } %>
 
                 <fieldset class="form-group text-right">
-                    <button type="submit" class="col-sm-offset-2 btn btn-success">Submit</button>
+                    <button type="submit" class="col-sm-offset-2 btn btn-submit">Submit</button>
                     <a href="/tickets">
-                        <input type="button" class="btn btn-danger" value="Cancel"/>
+                        <input type="button" class="btn btn-delete" value="Cancel"/>
                     </a>
                     
                 </fieldset>
             </form>
-        </div>      
-    </div>
-    <div class="row">
+        </div>   
+        <div class="col-sm-6">
             <h3>Incident Narrative:</h3>
                 <table class="table table-striped">
                     <thead>                      
@@ -184,7 +183,8 @@
                         <% } %>
                     </tbody>
                 </table>
+        </div>
     </div>
-</div> <!--./white-bg-->
+<!--</div> <!--./white-bg-->
 </main>
 <% include ../partials/footer.ejs %>
