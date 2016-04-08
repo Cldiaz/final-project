@@ -71,6 +71,7 @@ thead{
     padding: 2em;
 }
 
+/* Buttons */
 .btn{
     color: white;
 }
@@ -90,6 +91,16 @@ thead{
     background-color: #F71735;
 }
 
+.btn-block{
+    border-radius: 0px;
+    margin-top: 25px;
+    background-color: #41EAD4;
+    border: none;
+}
+
+.btn-block:hover, .btn-reset:hover, .btn-delete:hover, .btn-submit:hover, .btn-cancel:hover{
+    background-color: #FF9F1C;
+}
 .red-required{
     color: #E15554;
 }
@@ -122,15 +133,7 @@ thead{
 .input-group:hover span i{
     color: #60B99A;
 }
-.btn-block{
-    border-radius: 0px;
-    margin-top: 25px;
-    background-color: #60B99A;
-    border: none;
-}
-.btn-block:hover, .btn-reset:hover, .btn-delete:hover, .btn-submit:hover, .btn-cancel:hover{
-    background-color: #D3CE3D;
-}
+
 .bol{
     position: relative;
     margin-top: -40px;
@@ -144,6 +147,9 @@ thead{
 
 
 /* Contact Page */
-.contact-main{
-    margin-top: 40px;
+.form-contact{
+  max-width: 1000px;
+  padding: 30px 38px 38px;
+  margin: 0 auto;
+  border: 1px solid #cccccc;
 }

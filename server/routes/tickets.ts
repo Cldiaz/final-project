@@ -62,7 +62,7 @@ router.get('/', requireAuth,(req:express.Request, res:express.Response, next: an
             else {
                 //no error, list of tickets
                 res.render('tickets/index',{
-                    title: 'Tickets',
+                    title: 'Dashboard',
                     tickets : tickets,
                     typeU: typeUser,
                     type: req.user.type,
