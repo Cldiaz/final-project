@@ -21,7 +21,7 @@
                 <li><a href="/contact">Contact Us</a></li>
                 <li class="navbar-text"><i class="fa fa-user"></i> Wecome, <%= displayName %></li>
                 <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
-            <% } else if(title === "Dashboard"){%>
+            <% } else if(title === "Dashboard" || title === "Ticket Details"){%>
                 <li><a href="/users">Users</a></li>
                 <li class="active"><a href="/tickets">Dashboard</a></li>
                 <li><a href="/contact">Contact Us</a></li>
@@ -36,7 +36,7 @@
             <% } %>
         <!-- If they are login as Customer-->        
         <% } else if(displayName && type === "Customer"){ %>
-            <% if(title === "My Tickets" || title === "Create New Ticket"){ %>
+            <% if(title === "My Tickets" || title === "Create New Ticket" || title==="Ticket Details"){ %>
                 <li class="active"><a href="/tickets/mytickets">My Tickets</a></li>
                 <li><a href="/users/myaccount">Edit Account</a></li>
                 <li><a href="/contact">Contact Us</a></li>
