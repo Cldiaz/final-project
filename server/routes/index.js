@@ -10,7 +10,7 @@ var User = userModel.User;
 /* GET login landing page */
 router.get('/', function (req, res, next) {
     res.render('index', {
-        title: 'Products',
+        title: 'Home',
         displayName: req.user ? req.user.displayName : ''
     });
     // if(!req.user) {

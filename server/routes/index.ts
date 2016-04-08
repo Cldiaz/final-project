@@ -12,7 +12,7 @@ import User = userModel.User;
 /* GET login landing page */
 router.get('/', (req: express.Request, res: express.Response, next: any) => {
     res.render('index', { 
-        title: 'Products',
+        title: 'Home',
         displayName: req.user ? req.user.displayName : ''
     });
     // if(!req.user) {
